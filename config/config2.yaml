@@ -2,6 +2,5 @@
 # Reflected Code: https://github.com/geekan/MetaGPT/blob/main/metagpt/config2.py
 # Config Docs: https://docs.deepwisdom.ai/main/en/guide/get_started/configuration.html
 llm:
-  api_type: "codestallation" # or azure / ollama / groq etc.
-  model: "deepseek" # or gpt-3.5-turbo
-  base_url: "http://localhost:8000/v1" # or forward url / other llm url
+  api_type: "codestallation" # for codestallation project
+  model: "TinyLlama/TinyLlama-1.1B-Chat-v1.0" # any hugging face enabled model

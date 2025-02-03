@@ -22,7 +22,6 @@ class LLMProviderRegistry:
 
 
 def register_provider(keys):
-    print(keys)
     """register provider to registry"""
 
     def decorator(cls):
