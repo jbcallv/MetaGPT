@@ -14,10 +14,6 @@ from metagpt.provider.llm_provider_registry import register_provider
 
 @register_provider(LLMType.CODESTALLATION)
 class CodestallationLLM(BaseLLM):
-    """Humans provide themselves as a 'model', which actually takes in human input as its response.
-    This enables replacing LLM anywhere in the framework with a human, thus introducing human interaction
-    """
-
     def __init__(self, config: LLMConfig):
         """Initialize the provider with config and load model
         
