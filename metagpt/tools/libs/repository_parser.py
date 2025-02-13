@@ -6,6 +6,8 @@ class RepositoryParser:
     """
     A repository parsing tool that clones a GitHub repository and parses relevant code components into memory
     """
+    def __init__(self):
+        print("In the init of repo parser")
 
     @staticmethod
     def clone_repository(repo_url, target_dir: str = "."):

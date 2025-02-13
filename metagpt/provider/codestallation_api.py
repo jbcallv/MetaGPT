@@ -55,7 +55,7 @@ class CodestallationLLM(BaseLLM):
         try:
             prompt = self.messages_to_prompt(messages)
             inputs = self.tokenizer(prompt, return_tensors="pt").to(self.model.device)
-            
+
             outputs = self.model.generate(
                 **inputs,
                 max_new_tokens=kwargs.get("max_tokens", 512),
