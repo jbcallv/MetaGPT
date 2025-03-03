@@ -110,6 +110,9 @@ class Action(SerializationMixin, ContextMixin, BaseModel):
     def _tokenize(self, text: str) -> list[str]:
         return self.llm.tokenize(text)
 
+    def _detokenize(self, tokens: list[int]):
+        return self.llm.detokenize(tokens)
+
     async def _run_action_node(self, *args, **kwargs):
         """Run action node"""
         msgs = args[0]

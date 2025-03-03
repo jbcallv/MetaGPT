@@ -132,3 +132,6 @@ class CodestallationLLM(BaseLLM):
 
     def tokenize(self, text):
         return self.tokenizer.encode(text, add_special_tokens=False)
+
+    def detokenize(self, tokens):
+        return self.tokenizer.decode(tokens)

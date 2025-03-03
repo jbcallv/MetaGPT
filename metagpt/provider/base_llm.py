@@ -155,7 +155,10 @@ class BaseLLM(ABC):
     @abstractmethod
     def tokenize(self, text: str) -> list[str]:
         return text.split()
-        
+
+    @abstractmethod
+    def detokenize(self, tokens: list[int]):
+        return tokens
 
     def _extract_assistant_rsp(self, context):
         return "\n".join([i["content"] for i in context if i["role"] == "assistant"])
