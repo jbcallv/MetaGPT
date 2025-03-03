@@ -107,6 +107,9 @@ class Action(SerializationMixin, ContextMixin, BaseModel):
         """Append default prefix"""
         return await self.llm.aask(prompt, system_msgs)
 
+    async def _tokenize(self, text: str) -> list[str]:
+        return await self.llm.tokenize(text)
+
     async def _run_action_node(self, *args, **kwargs):
         """Run action node"""
         msgs = args[0]

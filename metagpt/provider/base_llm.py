@@ -152,6 +152,11 @@ class BaseLLM(ABC):
         rsp = await self.acompletion_text(message, stream=stream, timeout=self.get_timeout(timeout))
         return rsp
 
+    @abstractmethod
+    async def tokenize(self, text: str) -> list[str]:
+        return text.split()
+        
+
     def _extract_assistant_rsp(self, context):
         return "\n".join([i["content"] for i in context if i["role"] == "assistant"])
 

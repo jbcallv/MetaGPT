@@ -129,3 +129,6 @@ class CodestallationLLM(BaseLLM):
             str: Extracted text
         """
         return rsp["choices"][0]["message"]["content"]
+
+    def tokenize(self, text):
+        return self.tokenizer.encode(text, add_special_tokens=False)
