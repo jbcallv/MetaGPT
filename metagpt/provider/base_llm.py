@@ -153,7 +153,7 @@ class BaseLLM(ABC):
         return rsp
 
     @abstractmethod
-    async def tokenize(self, text: str) -> list[str]:
+    def tokenize(self, text: str) -> list[str]:
         return text.split()
         
 
