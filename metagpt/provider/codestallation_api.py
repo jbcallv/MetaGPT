@@ -58,8 +58,8 @@ class CodestallationLLM(BaseLLM):
 
             outputs = self.model.generate(
                 **inputs,
-                max_new_tokens=kwargs.get("max_tokens", 512),
-                temperature=kwargs.get("temperature", 0.7),
+                max_new_tokens=300,
+                temperature=0.2,
                 do_sample=True
             )
             
