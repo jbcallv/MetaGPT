@@ -74,6 +74,7 @@ TOKEN_COSTS = {
     "claude-3-5-sonnet-20240620": {"prompt": 0.003, "completion": 0.015},
     "claude-3-opus-20240229": {"prompt": 0.015, "completion": 0.075},
     "claude-3-haiku-20240307": {"prompt": 0.00025, "completion": 0.00125},
+    "claude-3-5-haiku-20241022": {"prompt": 0.0008, "completion": 0.004},
     "yi-34b-chat-0205": {"prompt": 0.0003, "completion": 0.0003},
     "yi-34b-chat-200k": {"prompt": 0.0017, "completion": 0.0017},
     "yi-large": {"prompt": 0.0028, "completion": 0.0028},

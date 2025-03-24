@@ -70,3 +70,14 @@ class AnthropicLLM(BaseLLM):
         self._update_costs(usage)
         full_content = "".join(collected_content)
         return full_content
+
+    def tokenize(self, text):
+        # abstract method for codestallation api: this is an approximation
+        if not text:
+            return []
+        return text.split('\n')
+
+
+    def detokenize(self, tokens):
+        # abstract method for codestallation api: this is an approximation
+        return '\n'.join(tokens)

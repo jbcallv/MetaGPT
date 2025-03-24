@@ -27,6 +27,11 @@ class CodestallationLLM(BaseLLM):
         
     def _load_model(self):
         """Load model and tokenizer into memory"""
+        if self.config.model == "no_model":
+            self.model = None
+            self.tokenizer = None
+            return
+
         try:
             from transformers import AutoModelForCausalLM, AutoTokenizer
             
