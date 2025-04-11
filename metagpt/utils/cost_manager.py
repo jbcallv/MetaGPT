@@ -28,7 +28,7 @@ class CostManager(BaseModel):
     total_prompt_tokens: int = 0
     total_completion_tokens: int = 0
     total_budget: float = 0
-    max_budget: float = 10.0
+    max_budget: float = 100.0
     total_cost: float = 0
     token_costs: dict[str, dict[str, float]] = TOKEN_COSTS  # different model's token cost
 
@@ -54,10 +54,10 @@ class CostManager(BaseModel):
             + completion_tokens * self.token_costs[model]["completion"]
         ) / 1000
         self.total_cost += cost
-        logger.info(
+        """logger.info(
             f"Total running cost: ${self.total_cost:.3f} | Max budget: ${self.max_budget:.3f} | "
             f"Current cost: ${cost:.3f}, prompt_tokens: {prompt_tokens}, completion_tokens: {completion_tokens}"
-        )
+        )"""
 
     def get_total_prompt_tokens(self):
         """
