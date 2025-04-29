@@ -309,3 +309,14 @@ class OpenAILLM(BaseLLM):
             img_url_or_b64 = item.url if resp_format == "url" else item.b64_json
             imgs.append(decode_image(img_url_or_b64))
         return imgs
+
+    def tokenize(self, text):
+        # abstract method for codestallation api: this is an approximation
+        if not text:
+            return []
+        return text.split('\n')
+
+
+    def detokenize(self, tokens):
+        # abstract method for codestallation api: this is an approximation
+        return '\n'.join(tokens)
